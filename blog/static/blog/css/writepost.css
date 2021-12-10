@@ -1,0 +1,68 @@
+#mytextarea{
+    height: 60vh;
+}
+.post-form h2{
+    display: inline;
+    margin-left: 12px;
+    font-family: 'Epilogue', sans-serif;
+}
+.post-submit{
+    position: absolute;
+    right: 12px;
+    height: 30px;
+    margin-top: 6px;
+    padding: 0 10px 0 10px;
+    font-size: 20px;
+    background-color: #0d6efd;
+}
+#my-form{
+    margin-top: 20px;
+}
+.category{
+    display: flex;
+    justify-content: center;
+    height: 50px;
+}
+#category{
+    font-size: 1.3em;
+    height: 1.5em;
+    border: none;
+    padding-right: 20px;
+    outline: none;
+}
+.post-title{
+    display: flex;
+    justify-content: center;
+    padding-left: 38px;
+    margin-bottom: 12px;
+}
+#input-title{
+    border: none;
+    outline: none;
+    padding-left: 20px;
+    font-size: 1em;
+}
+
+
+ol, ul{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+.dropdown .btn{
+    color: #000000;
+    background-color: #fff;
+    padding: 0 12px 0 12px;
+    border: none;
+    outline: none;
+}
+#dropdownMenuLink::after {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+}

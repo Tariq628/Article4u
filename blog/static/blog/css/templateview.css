@@ -1,0 +1,49 @@
+/* font-family: 'Roboto', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/* font-family: 'Oxygen', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+/* font-family: 'Epilogue', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400&display=swap');
+
+.container{
+    max-width: 80vw;
+    margin: 12px auto;
+    padding: 0;
+    position: relative;
+}
+.post{
+    width: 100%;
+    border: 1px solid rgb(222 215 215);
+    background-color: #f8f9fa;
+}
+.post img{
+    height: 450px;
+    width: 100% !important;
+}
+.post > img:first-child {
+    position: absolute;
+    right: 0;
+    width: 50% !important;
+    height: 450px;
+}
+.left-content{
+    font-family: 'Oxygen', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 500px;
+    width: 50%;
+    
+}
+.font-size{
+    font-size: 2.7rem;
+}
+.content{
+    font-family: 'Oxygen', sans-serif;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}

@@ -1,0 +1,89 @@
+/* font-family: 'Roboto', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+#home-container{
+    background: url("../img/home.jpg");
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 500px;
+    /* background-size: cover; */
+}
+.nav-center ul a{
+    text-decoration: none;
+    color: white;
+}
+
+/* overwrite the searchIcon Css */
+.white, .fa-search:before{
+    color: white;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 73%;
+}
+.posts{
+    display: flex; /*this is for above section */
+}
+.container h2{
+    font-family: 'Roboto', sans-serif;
+    color: blanchedalmond;
+}
+#section{
+    grid-area: section;
+}
+#aside{
+    grid-area: aside;
+}
+#grid{
+    max-width: 80vw;
+    margin: 20px auto;
+    display: grid;
+    grid-template-areas: 
+    'section section aside'
+    ;
+}
+
+.container-posts{
+    display: flex;
+}
+
+
+/* for left */
+.post{
+    text-align: center; /* this is for left post */
+}
+.left-post img{
+    width:  100% !important;
+    height: 213px;
+}
+.left-content{
+    width: 75%;
+    margin: 0 auto;
+}
+
+
+
+/* for right */
+.right-posts .right-post{
+    display: flex;
+    height: 150px;
+}
+.right-posts img{
+    width: 30%;
+    height: 78%;
+}
+.right-content{
+    width: 50%;
+    margin: 0 10px;
+}
+
+
+
+
+p {
+    margin-bottom: 0; /*paragraph always has a default bottom margin */
+}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}New Story | Article4u{% endblock title %} 
+{% block csslink %}
+<link rel="stylesheet" href="{% static 'blog/css/writepost.css' %}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600&display=swap" rel="stylesheet">
+{% endblock csslink %}
+{% block head %}
+{% endblock head %}
+{% block js %} 
+{% endblock js %}
+{% block body %}
+
+<div class="post-form">
+<h2>Write your article here</h2>
+<button form="my-form" class="post-submit btn-primary" type="submit">Publish</button>
+<form action="/blog/write-post/" id="my-form" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<div class="category">
+<select name="category" id="category" required>
+<option value="" disabled selected>Post's category</option>
+<option value="randomFacts">Random Facts</option>
+<option value="Technology">Technology</option>
+<option value="Sport">Sport</option>
+<option value="Poets">About poeters</option>
+</select>
+</div>
+                    
+                    
+
+<div class="post-title">
+<label for="input-title">Title:</label>
+<input maxlength="98" name="title" id="input-title" type="text" placeholder="Write suitable title.. " required>
+</div>
+
+
+
+<div class="center">
+<label style="margin-right:10px;" for="image">Choose main image: </label>
+<input type="file" name="image" class="mx-3" id="img" required>
+</div>
+
+
+<div class="container">
+<label style="font-size:26px" class="required" for="id_content">Your Content:</label>
+<textarea name="content" cols="40" rows="10" id="id_content" hidden="true"></textarea>
+<div cols="50" rows="10" width="1000" height="480">
+<iframe id="id_content_iframe" src="/summernote/editor/id_content/" style="width:100%;" frameborder="0"></iframe>
+</div>
+<script>
+var settings_id_content = {"width": "100%", "height": "600px","placeholder": "Write your blog...", "fontNames": ["Arial", "Arial Black", "Comic Sans MS", "Courier New", "Helvetica Neue", "Helvetica", "Impact", "Lucida Grande", "Tahoma", "Times New Roman", "Verdana"], "fontNamesIgnoreCheck": ["Spectral", "Quicksand"], "lang": "en-US", "toolbar": [["style", ["style"]], ["font", ["bold", "italic", "underline", "superscript", "subscript", "strikethrough", "clear"]], ["fontname", ["fontname"]], ["fontsize", ["fontsize"]], ["color", ["color"]], ["para", ["ul", "ol", "paragraph"]], ["height", ["height"]], ["table", ["table"]], ["insert", ["link", "picture", "video", "hr"]], ["view", ["fullscreen", "codeview"]], ["help", ["help"]]], "url": {"language": "/static/summernote/lang/summernote-en-US.min.js", "upload_attachment": "/summernote/upload_attachment/"}};
+</script>
+</form>
+</div>
+
+</div> {% comment %} post.form wala div {% endcomment %}
+
+{% endblock body %}
