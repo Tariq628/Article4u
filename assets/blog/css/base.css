@@ -1,56 +1,86 @@
+/* font-family: 'Roboto', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+body{
+    overflow-x: hidden;
+}
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+  }
 /* search icon css */
 .fa-search:before {
     color: #000000;
-
     }
   
 /* for navbar */
+
 #navbar{
-    margin-bottom: 25px;
+    margin-bottom: 12px;
+    z-index: 1;
+    background-color: #fff;
+    position: sticky;
+    top: 0;
 }
 #navbar nav{
     display: flex;
     align-items: center;
     position: relative;
+}
+@media only screen and (min-width:953px){
+#navbar{
+    height: 56px;
+}
+#navbar nav{
     top: 12px;
 }
 .nav-center{
     width: 100%;
 }
 .nav-center ul li{
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
     list-style: none;
     margin-right: 40px;
 }
-@media only screen and (max-width:899px){
+}
+@media only screen and (max-width:955px){
     #navbar nav .nav-center .center{
         display: flex;
         flex-direction: column;
         align-items: center;
-        position: relative;
-        top: 12px;
+        /* position: relative;
+        top: 12px; */
     }
     #navbar nav{
         flex-direction: column;
     }
     .nav-center ul li{
+        list-style: none;
         margin-right: 0;
+    }
+    .right.center{
+        flex-direction: column;
+    }
+    #aside{
+        display: none;
     }
 }
 .nav-center ul a{
     text-decoration: none;
     color: #000000;
 }
-/* .nav-center ul a:hover{
+.nav-center ul a:hover{
     border-bottom: 2px solid rgb(150 150 150);
-} */
-.nav-center ul li:hover{
     cursor: pointer;
 }
+/* .nav-center ul li a:hover{
+    color: #1e86f5;
+} */
 .line{
     margin: 0 auto;
     width: 50%;
@@ -58,8 +88,9 @@
     right: 20px;
     color: rgb(10 2 76);
 }
+
 #logo img{
-    width: 40px;
+    width: 43px;
     border-radius: 31px;
 }
 
@@ -75,7 +106,7 @@
 }
 .search-container .input.active{
     width: 150px;
-    padding: 8px 0 8px 7px;
+    padding: 4px 0 4px 7px;
     border: 1px solid #1e86f5;
     border-radius: 8px;
 
@@ -87,8 +118,8 @@
     color: #1e86f5;
 }
 .submit-btn{
-    padding: 6px;
-    border-radius: 8px;
+    padding: 3px;
+    border-radius: 4px;
     background-color: #1e86f5;
     border-color: #1e86f5;
     color: #fff;
@@ -128,13 +159,12 @@ button, input, optgroup, select, textarea {
     margin: 0;
     padding: 0;
     font-family: 'Font Awesome 5 Pro';
-    font-size: xx-small;
     line-height: initial;
 }
 .btn{
     color: #000000;
     background-color: #fff;
-    padding: 0 12px 0 12px;
+    padding: 1px 12px 1px 12px;
     border: none;
     outline: none;
 }

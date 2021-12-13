@@ -18,12 +18,12 @@
 }
 .post img{
     height: 450px;
-    width: 100%;
+    width: 100% !important;
 }
 .post > img:first-child {
     position: absolute;
     right: 0;
-    width: 50%;
+    width: 50% !important;
     height: 450px;
 }
 .left-content{

@@ -1,5 +1,8 @@
 /* font-family: 'Roboto', sans-serif; */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+.note-video-clip{
+    width: 100%;
+}
 .container-inside code{
     display: none;
 }
@@ -20,7 +23,7 @@
 }
 .container img{
     width: 80% !important;
-    height: 294px;
+    height: 400px;
     margin-top: 10px;
 }
 #sec1{
@@ -62,7 +65,7 @@
 }
 .container-inside img{
     width: 90% !important;
-    height: 226px;
+    height: 250px;
     margin-top: 10px;
 }
 .btn1{

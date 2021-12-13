@@ -5,7 +5,6 @@ function fixHtml(html){
     div.innerHTML=html
     return (div.innerHTML);
   }
-  
 let tagName = document.getElementById("sec1");
 let btn1 = document.querySelector(".btn1");
 let visible = 5;
@@ -17,7 +16,7 @@ const handleArticles =()=>{
     console.log(container);
     $.ajax({
         type:"GET",
-        url: `/blog/technology/${visible}/`,
+        url: `${document.location.pathname}${visible}/`,
         success: function(response){
             let data = response.data;
             data.map((post)=>{
@@ -29,7 +28,7 @@ const handleArticles =()=>{
 </div>
 <h6>${post.title}</h6>
 <p>${fixHtml(post.content.slice(0,600))}</p>
-<p><a href="/blog/technologyview/${post.postId}">Read more . </a><span>4 min read</span></p> 
+<p><a href="/blog/templateview/${post.postId}">Read more . </a><span>4 min read</span></p> 
 </article>
 `
             });

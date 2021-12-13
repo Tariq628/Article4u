@@ -1,0 +1,119 @@
+/* font-family: 'Roboto', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+p,span {
+    font-size: 15px !important;
+    line-height: 20px !important;
+}
+.left-post .note-video-clip{
+    width: 100% !important;
+}
+#home-container{
+    background: url("../img/homebg.jpg");
+    height: 610px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 700px;
+    display: flex;
+    align-items: center;
+    /* background-size: cover; */
+}
+#home-container h2{
+    font-family: 'Roboto', sans-serif;
+    color: blanchedalmond;
+}
+.nav-center ul a{
+    text-decoration: none;
+    color: black;
+}
+
+
+/* overwrite the searchIcon Css */
+.white, .fa-search:before{
+    color: black;
+}
+
+
+.posts{
+    display: flex; /*this is for above section */
+}
+
+#section{
+    grid-area: section;
+}
+#aside{
+    grid-area: aside;
+}
+#grid{
+    max-width: 80vw;
+    margin: 20px auto;
+    display: grid;
+    grid-template-areas: 
+    'section section aside'
+    ;
+}
+
+.container-posts{
+    display: flex;
+}
+
+
+/* for left */
+.post{
+    text-align: center; /* this is for left post */
+}
+.left-post{
+    margin-right: 20px;
+}
+.left-post img{
+    width:  100% !important;
+    height: 213px;
+}
+
+
+
+/* for right */
+.right-posts .right-post{
+    display: flex;
+    height: 150px;
+    margin-bottom: 20px;
+}
+.right-posts img{
+    width: 35%;
+    height: 95%;
+}
+.right-content{
+    width: 50%;
+    margin: 10px;
+}
+.right-content h1, h3{
+    text-align: initial !important;
+    font-family: zillaslab, palatino, "Palatino Linotype", serif !important;
+    letter-spacing: 1px !important;
+    line-height: 1 !important;
+    font-size: 1.052rem !important;
+    margin-top: 0px !important;
+    margin-bottom: 2px !important;
+    word-break: break-word !important;
+    color: rgb(27, 27, 27) !important;
+}
+
+
+
+/* Overrider default css */
+p {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important; /*paragraph always has a default bottom margin */
+}
+.TbwUpd.NJjxre {
+    display: none !important;
+}
+
+
+@media only screen and (max-width:688px){
+    .container-posts {
+        flex-direction: column;
+    }
+    .right-content {
+        width: initial;
+    }
+}
