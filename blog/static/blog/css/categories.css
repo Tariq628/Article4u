@@ -3,9 +3,6 @@
 .note-video-clip{
     width: 100%;
 }
-.container-inside code{
-    display: none;
-}
 .container{
     display: grid;
     grid-gap: 10px;
@@ -23,7 +20,7 @@
 }
 .container img{
     width: 80% !important;
-    height: 400px;
+    height: auto;
     margin-top: 10px;
 }
 #sec1{
@@ -65,7 +62,16 @@
 }
 .container-inside img{
     width: 90% !important;
-    height: 250px;
+    height: auto;
+    margin-top: 10px;
+}
+.container-inside .post.one img{
+    width: 71% !important;
+    height: 422px;
+}
+.container-inside .post.two img{
+    width: 90% !important;
+    height: 339px;
     margin-top: 10px;
 }
 .btn1{

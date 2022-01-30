@@ -5,6 +5,7 @@ function fixHtml(html){
     div.innerHTML=html
     return (div.innerHTML);
   }
+  
 let tagName = document.getElementById("sec1");
 let btn1 = document.querySelector(".btn1");
 let visible = 5;
@@ -16,7 +17,7 @@ const handleArticles =()=>{
     console.log(container);
     $.ajax({
         type:"GET",
-        url: `${document.location.pathname}${visible}/`,
+        url: `/blog/technology/${visible}/`,
         success: function(response){
             let data = response.data;
             data.map((post)=>{
@@ -28,7 +29,7 @@ const handleArticles =()=>{
 </div>
 <h6>${post.title}</h6>
 <p>${fixHtml(post.content.slice(0,600))}</p>
-<p><a href="/blog/templateview/${post.postId}">Read more . </a><span>4 min read</span></p> 
+<p><a href="/blog/technologyview/${post.postId}">Read more . </a><span>4 min read</span></p> 
 </article>
 `
             });
@@ -44,19 +45,4 @@ handleArticles();
 bt.addEventListener("click", ()=>{
     visible += 3;
     handleArticles();
-    let c_inside = document.querySelectorAll(".container-inside");
-    console.log(c_inside);
-    c_inside.forEach(element => {
-        console.log(element)
-        setTimeout(() => {
-            if (element.children.length === 1) {
-                element.children[0].classList.add("one");
-            }
-            else if (element.children.length === 2) {
-                Array.from(element.children).forEach(item => {
-                    item.classList.add("two");
-                });
-            }
-        }, 100);
-    });
 })
