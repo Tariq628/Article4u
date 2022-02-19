@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block title %}
+Signup | Article4u
+{% endblock title %}
 {% block csslink %}
 <link rel="stylesheet" href="{% static 'blog/css/signup.css' %}">
 {% endblock csslink %}
@@ -7,10 +10,10 @@
 <div class="container">
     <form action="" method="post" novalidate>
         {% csrf_token %}
-            {% for fm in form.visible_fields %}
-                <div class="label">{{fm.label_tag}}</div>
-                {{fm}}
-                <span class="errors">{{fm.errors|striptags}}</span>
+        {% for fm in form.visible_fields %}
+        <div class="label">{{fm.label_tag}}</div>
+        {{fm}}
+        <span class="errors">{{fm.errors|striptags}}</span>
         {% endfor %}
         <input class="inputs submit" type="submit" value="Submit">
     </form>

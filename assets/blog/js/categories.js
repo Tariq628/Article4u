@@ -17,7 +17,7 @@ const handleArticles =()=>{
     $.ajax({
         type:"GET",
         url: `${document.location.pathname}${visible}/`,
-        success: function(response){
+        success: function(response){ 
             let data = response.data;
             data.map((post)=>{
             container.innerHTML += `
@@ -28,7 +28,7 @@ const handleArticles =()=>{
 </div>
 <h6>${post.title}</h6>
 <p>${fixHtml(post.content.slice(0,600))}</p>
-<p><a href="/blog/templateview/${post.postId}">Read more . </a><span>4 min read</span></p> 
+<p><a href="/templateview/${post.postId}">Read more . </a><span>4 min read</span></p> 
 </article>
 `
             });
@@ -44,4 +44,19 @@ handleArticles();
 bt.addEventListener("click", ()=>{
     visible += 3;
     handleArticles();
+    let c_inside = document.querySelectorAll(".container-inside");
+    console.log(c_inside);
+    c_inside.forEach(element => {
+        console.log(element)
+        setTimeout(() => {
+            if (element.children.length === 1) {
+                element.children[0].classList.add("one");
+            }
+            else if (element.children.length === 2) {
+                Array.from(element.children).forEach(item => {
+                    item.classList.add("two");
+                });
+            }
+        }, 100);
+    });
 })

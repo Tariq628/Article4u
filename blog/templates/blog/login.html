@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block title %}
+Login | Article4u
+{% endblock title %}
 {% block csslink %}
 <link rel="stylesheet" href="{% static 'blog/css/login.css' %}">
 {% endblock csslink %}
@@ -7,31 +10,31 @@
 {% block body %}
 {% load static %}
 <div id="login-container" class="container">
-<div id="login-left">
-<img src="{% static 'blog/img/login.jpg' %}" alt="No">
-</div>
+    <div id="login-left">
+        <img src="{% static 'blog/img/login.jpg' %}" alt="No">
+    </div>
 
 
-<div id="login-right">
-<h1>Login to continue</h1>
-<form method="post" action="" novalidate>
-{% csrf_token %}
-{% comment %} {% for error in form.non_field_errors %}
-{{error}}
-{% endfor %} {% endcomment %}
-{% for field in form.visible_fields %}
-<div>
-<div class="label">{{field.label_tag}}</div>
-{{field}}
-<span class="errors">{{field.errors|striptags}}</span>
-</div>
-{% endfor %}
-{% for field in form.hidden_fields %}
-{{field}}
-{% endfor %}
+    <div id="login-right">
+        <h1>Login to continue</h1>
+        <form method="post" action="" novalidate>
+            {% csrf_token %}
+            {% comment %} {% for error in form.non_field_errors %}
+            {{error}}
+            {% endfor %} {% endcomment %}
+            {% for field in form.visible_fields %}
+            <div>
+                <div class="label">{{field.label_tag}}</div>
+                {{field}}
+                <span class="errors">{{field.errors|striptags}}</span>
+            </div>
+            {% endfor %}
+            {% for field in form.hidden_fields %}
+            {{field}}
+            {% endfor %}
 
-<input class="inputs submit" type="submit" value="Submit">
-</form>
-</div>
+            <input class="inputs submit" type="submit" value="Submit">
+        </form>
+    </div>
 </div>
 {% endblock body %}

@@ -8,51 +8,55 @@
 
 {% block body %}
 <div id="home-container">
-<div class="container">
-<h2>This is the blog where you can get lots of articles which can help you in your real life, technical life and your exams etc</h2>
-</div>
+    <div class="container">
+        <h2>This is the blog where you can get lots of articles which can help you in your real life, technical life and
+            your exams etc</h2>
+    </div>
 </div>
 <div id="grid">
-<section id="section">
-<h3>Latest Updates</h3>
-<div class="container-posts">
-<div class="left-post">
-{% for item in obj|slice:'0:1' %}
-<article class="post">
-<div><img src="/media/{{item.image}}" alt=""></div>
-<div class="left-content">
-<h6>{{item.title|safe}}</h6>
-{% comment %} <p>{{item.content|truncatewords_html:10|safe}}</p> {% endcomment %}
-<p><a href="/blog/templateview/{{item.postId}}">Read more . </a><span>4 min read</span></p> 
-<div>
-<span><b style='font-size:14px;'>Tariq Ahmed </b><span style='font-size:12px;'>in </span><b style='font-size:14px;'>{{item.category}}</b></span>
-</div>
-</div>
-</article>
-{% endfor %}
-</div>
-<div class="right-posts">
-{% for item in obj|slice:'1:4' %}
-<article class="right-post">
-<img src="/media/{{item.image}}" alt="">
-<div class="right-content">
-<h6>{{item.title|safe}}</h6>
-{% comment %} <p>{{item.content|truncatewords_html:10|safe}}</p> {% endcomment %}
-<p><a href="/blog/templateview/{{item.postId}}">Read more . </a><span>4 min read</span></p> 
-<div>
-<span><b style='font-size:14px;'>Tariq Ahmed </b><span style='font-size:12px;'>in </span><b style='font-size:14px;'>{{item.category}}</b></span>
-</div>
-</div>
-</article>
-{% endfor %}
-</div>
-</section>
+    <section id="section">
+        <h3>Latest Updates</h3>
+        <div class="container-posts">
+            <div class="left-post">
+                {% for item in obj|slice:'0:1' %}
+                <article class="post">
+                    <div><img src="/media/{{item.image}}" alt=""></div>
+                    <div class="left-content">
+                        <h6>{{item.title|safe}}</h6>
+                        {% comment %} <p>{{item.content|truncatewords_html:10|safe}}</p> {% endcomment %}
+                        <p><a href="{% url 'templateView' item.postId %}">Read more . </a><span>4 min read</span></p>
+                        <div>
+                            <span><b style='font-size:14px;'>Tariq Ahmed </b><span style='font-size:12px;'>in </span><b
+                                    style='font-size:14px;'>{{item.category}}</b></span>
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+            <div class="right-posts">
+                {% for item in obj|slice:'1:4' %}
+                <article class="right-post">
+                    <img src="/media/{{item.image}}" alt="">
+                    <div class="right-content">
+                        <h6>{{item.title|safe}}</h6>
+                        <p><a href="{% url 'templateView' item.postId %}">Read more . </a><span>4 min read</span></p>
+                        <div>
+                            <span><b style='font-size:14px;'>Tariq Ahmed </b><span style='font-size:12px;'>in </span><b
+                                    style='font-size:14px;'>{{item.category}}</b></span>
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+    </section>
 
-<aside id="aside">
-<h3>About World</h3>
-<p>The mango is perfect in that it is always yellow and if it’s not, I don’t want to hear about it. The mango’s only flaw, and it’s a minor one, is the effort it sometimes takes to undress the mango, carve it up in a way that makes sense, and find its way to the mouth.</p>
-<h4>Top Articles</h4>
-</aside>
+    <aside id="aside">
+        <h3>About World</h3>
+        <p>The mango is perfect in that it is always yellow and if it’s not, I don’t want to hear about it. The mango’s
+            only flaw, and it’s a minor one, is the effort it sometimes takes to undress the mango, carve it up in a way
+            that makes sense, and find its way to the mouth.</p>
+        <h4>Top Articles</h4>
+    </aside>
 </div>
 
 

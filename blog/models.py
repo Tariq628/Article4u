@@ -9,6 +9,6 @@ class addPost(models.Model):
     content = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
     class Meta:
-        get_latest_by = "date"
+        get_latest_by = "postId"
     def __str__(self):
         return self.title

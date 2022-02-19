@@ -29,15 +29,15 @@
       <nav>
         <div id="logo">
           {% comment %} <img src="{% static 'blog/img/logo1.png' %}" alt="Blog Logo" /> {% endcomment %}
-          <a href="/blog"><img id="logo1" src="{% static 'blog/img/logo.png' %}"></a>
+          <a href="{% url 'index' %}"><img id="logo1" src="{% static 'blog/img/logo.png' %}"></a>
         </div>
 
         <div class="nav-center">
           <ul class="center">
-            <li class="nav-item"><a href="/blog/randomfacts/">Random Facts</a></li>
-            <li class="nav-item"><a href="/blog/technology/">Technology</a></li>
-            <li class="nav-item"><a href="/blog/sports/">Sport </a></li>
-            <li class="nav-item"><a href="/blog/poets/">About poeters </a></li>
+            <li class="nav-item"><a href="/randomfacts/">Random Facts</a></li>
+            <li class="nav-item"><a href="/technology/">Technology</a></li>
+            <li class="nav-item"><a href="/sports/">Sport </a></li>
+            <li class="nav-item"><a href="/poets/">About poeters </a></li>
           </ul>
         </div>
 
@@ -61,10 +61,10 @@
 
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
     {% if user.is_authenticated %}
-    <li><a class="dropdown-item" href="/blog/logout">Logout</a></li>
+    <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
     {% else %}
-    <li><a class="dropdown-item" href="/blog/signup">Signup</a></li>
-    <li><a class="dropdown-item" href="/blog/login">Login</a></li>
+    <li><a class="dropdown-item" href="{% url 'signup' %}">Signup</a></li>
+    <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
     {% endif %}
   </ul>
 </div>
@@ -86,7 +86,7 @@
             <ul class="dropdown-menu w-auto" aria-labelledby="dropdownMenuLink">
               {% if user.is_authenticated %}
               <li>
-                <a class="dropdown-item" href="/blog/write-post">Write post</a>
+                <a class="dropdown-item" href="{% url 'writePost' %}">Write post</a>
               </li>
               {% else %}
               <li>

@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.forms import widgets
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm 
 
 class SignUpForm(UserCreationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={"class":"inputs", "placeholder":"Enter username.."}))
@@ -27,12 +27,15 @@ class SignUpForm(UserCreationForm):
 class CustomAuthenticationForm(AuthenticationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Tyoe username...", "class":"inputs"}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder":"Password", "class":"inputs"}))
+
+    # OR
+
     # class Meta:
     #     model = User
     #     fields = ['username','password']
     # def __init__(self, *args, **kwargs):
     #     super(CustomAuthenticationForm, self).__init__(*args, **kwargs)
-    #     self.fields['username'].widget = forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Username'})
-    #     self.fields['username'].label = False
-    #     self.fields['password'].widget = forms.PasswordInput(attrs={'class': 'form-control', 'placeholder':'Password'}) 
-    #     self.fields['password'].label = False
+    #     self.fields['username'].widget = forms.TextInput(attrs={'class': 'form-control inputs', 'placeholder': 'Username'})
+    #     self.fields['username'].label = "" #not recommended
+    #     self.fields['password'].widget = forms.PasswordInput(attrs={'class': 'form-control inputs', 'placeholder':'Password'}) 
+    #     self.fields['password'].label = "" #not recommended

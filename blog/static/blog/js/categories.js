@@ -17,7 +17,7 @@ const handleArticles =()=>{
     $.ajax({
         type:"GET",
         url: `${document.location.pathname}${visible}/`,
-        success: function(response){
+        success: function(response){ 
             let data = response.data;
             data.map((post)=>{
             container.innerHTML += `
@@ -28,7 +28,7 @@ const handleArticles =()=>{
 </div>
 <h6>${post.title}</h6>
 <p>${fixHtml(post.content.slice(0,600))}</p>
-<p><a href="/blog/templateview/${post.postId}">Read more . </a><span>4 min read</span></p> 
+<p><a href="/templateview/${post.postId}">Read more . </a><span>4 min read</span></p> 
 </article>
 `
             });
