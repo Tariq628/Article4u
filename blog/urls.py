@@ -5,10 +5,10 @@ urlpatterns = [
     # API to post a comment
     path("", views.index, name="index"),
     path("write-post/", views.writePost, name="writePost"),
-    path("technology/", Template.as_view(), name="Technology"),
-    path("technology/<int:num_posts>/", JsonTemplate.as_view(), name="jsonTechnology"),
     path("randomfacts/", Template.as_view(), name="randomFacts"),
     path("randomfacts/<int:num_posts>/", JsonTemplate.as_view(), name="jsonRandomFacts"),
+    path("technology/", Template.as_view(), name="Technology"),
+    path("technology/<int:num_posts>/", JsonTemplate.as_view(), name="jsonTechnology"),
     path("sports/", Template.as_view(), name="Sports"),
     path("sports/<int:num_posts>/", JsonTemplate.as_view(), name="jsonSports"),
     path("poets/", Template.as_view(), name="Poets"),

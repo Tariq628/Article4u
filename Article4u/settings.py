@@ -83,6 +83,16 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'article4u',
+#         'USER': 'root',
+#         'PASSWORD': 'tariq274',
+#         'HOST':'127.0.0.1',
+#         'PORT': '3306'
+#     }
+# }
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 X_FRAME_OPTIONS = 'ALLOWALL'
@@ -133,19 +143,3 @@ MEDIA_URL = '/media/'
 MESSAGE_TAGS = {
     messages.ERROR: "danger"
 }
-
-# SUMMERNOTE_CONFIG = {
-#     'summernote': {
-#     'toolbar': [
-#       ['style', ['style']],
-#       ['font', ['bold', 'italic', 'underline', 'clear']],
-#       ['fontname', ['fontname']],
-#       ['color', ['color']],
-#       ['para', ['ul', 'ol', 'paragraph']],
-#       ['height', ['height']],
-#       ['table', ['table']],
-#       ['insert', ['link', 'picture', 'hr']],
-#       ['view', ['fullscreen', 'codeview']],
-#       ['mybutton', ['myVideo']] 
-#     ],
-#     }}
