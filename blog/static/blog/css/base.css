@@ -115,6 +115,7 @@ a.disabled {
     position: relative;
     right: 22px;
     color: #1e86f5;
+    text-align: center;
 }
 .submit-btn{
     padding: 3px;
@@ -201,23 +202,32 @@ button, input, optgroup, select, textarea {
         display: block;
         z-index: 1;
     }
-    ul{
+    .btn{
+        width: 6em;
+    }
+    .mr--11 {
+        margin: 0;
+    }
+    .search-btn{
+        right: 0;
+    }
+    ul.center{
         position: fixed;
         width: 100%;
-        height: 100vh;
+        height: 70vh;
         background: #2c3e50;
-        top: 0;
-        left: -100%;
-        text-align: center;
+        top: -100%;
+        /* left: -100%; */
         transition: all .5s;
     }
     nav ul li{
         display: block;
         /* margin: 20px 0; */
-        /* line-height: 30px; */
+        line-height: 30px;
     }
     #check:checked ~ ul{
         left: 0;
+        top: 0;
     }
     #check:checked + .checkbtn{
         color: white;
