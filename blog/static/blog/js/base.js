@@ -54,3 +54,7 @@ inputBtn.addEventListener("click", function (ev) {
 // navItems.forEach((node) => {
 //   node.addEventListener("click", Handler);
 // });
+
+const iFrame = document.getElementsByTagName("iframe")[0];
+iFrame.height = "100%";
+iFrame.width = "100%";

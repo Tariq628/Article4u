@@ -8,11 +8,11 @@ function fixHtml(html){
 let tagName = document.getElementById("sec1");
 let btn1 = document.querySelector(".btn1");
 let visible = 5;
+let node = document.createElement("div");
+node.setAttribute("class", "container-inside");
+tagName.appendChild(node);
+var container = Array.from(document.querySelectorAll(".container-inside")).pop();
 const handleArticles =()=>{
-    let node = document.createElement("div");
-    node.setAttribute("class", "container-inside");
-    tagName.appendChild(node);
-    var container = Array.from(document.querySelectorAll(".container-inside")).pop();
     console.log(container);
     $.ajax({
         type:"GET",

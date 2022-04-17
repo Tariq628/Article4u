@@ -19,7 +19,6 @@
   <link rel="stylesheet" href="{% static 'blog/css/base.css' %}" />
   <link rel="stylesheet" href="{% static 'blog/css/all.css' %}" />
   {% block head %}{% endblock head %} {% block css %}{% endblock css %}
-
 </head>
 
 <body>
@@ -44,6 +43,10 @@
 
 
       <div class="right center">
+        
+
+        <!-- Example single danger button -->
+
         <div class="search-container mr--8">
           <form action="">
             <input class="black mx--1 input" type="text" />
@@ -93,6 +96,7 @@
             <li><a class="dropdown-item" href="#">About Us</a></li>
           </ul>
         </div>
+
       </div>
 
     </nav>
@@ -129,5 +133,4 @@
 {% comment %} bootstrap js {% endcomment %}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-
 </html>
