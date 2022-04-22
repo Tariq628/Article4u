@@ -1,7 +1,6 @@
 // let tagName = document.getElementsByTagName("section")[0];
 function fixHtml(html){
     var div = document.createElement('div');
-    console.log(div)
     div.innerHTML=html
     return (div.innerHTML);
   }
@@ -13,7 +12,6 @@ node.setAttribute("class", "container-inside");
 tagName.appendChild(node);
 var container = Array.from(document.querySelectorAll(".container-inside")).pop();
 const handleArticles =()=>{
-    console.log(container);
     $.ajax({
         type:"GET",
         url: `${document.location.pathname}${visible}/`,
@@ -32,22 +30,20 @@ const handleArticles =()=>{
 </article>
 `
             });
-            console.log(response.check);
             if(response.check){
-                console.log(btn1)
                 btn1.innerHTML = "No more posts";
             }
         }
     })
 };
+
+
 handleArticles();
 bt.addEventListener("click", ()=>{
     visible += 3;
     handleArticles();
     let c_inside = document.querySelectorAll(".container-inside");
-    console.log(c_inside);
     c_inside.forEach(element => {
-        console.log(element)
         setTimeout(() => {
             if (element.children.length === 1) {
                 element.children[0].classList.add("one");

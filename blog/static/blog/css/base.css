@@ -26,6 +26,7 @@ a.disabled {
     position: sticky;
     top: 0;
 }
+
 #navbar nav{
     display: flex;
     align-items: center;
@@ -152,6 +153,7 @@ button, input, optgroup, select, textarea {
 }
 
 
+
 /* for foooter */
 #footer{
     display: flex;
@@ -162,9 +164,6 @@ button, input, optgroup, select, textarea {
     height: 45px;
     margin-top: 18px;
 }
-
-
-
 #check{
     display: none;
 }
@@ -176,13 +175,12 @@ button, input, optgroup, select, textarea {
     display: none;
 }
 
+
+
 @media only screen and (max-width:955px){
         #navbar nav .nav-center .center{
             display: flex;
             flex-direction: column;
-            /* align-items: center; */
-            /* position: relative;
-            top: 12px; */
         }
         #navbar nav{
             flex-direction: column;
@@ -215,10 +213,10 @@ button, input, optgroup, select, textarea {
             justify-content: center;
             position: fixed;
             width: 100%;
-            height: 70vh;
+            /* height: 70vh; */
+            padding-top: 3em;
             background: #2c3e50;
             top: -100%;
-            /* left: -100%; */
             transition: all .5s;
         }
         nav ul li{
@@ -237,5 +235,13 @@ button, input, optgroup, select, textarea {
         }
         .nav-center ul a {
             color: #efe8e8;
+        }
+
+        /* navbar dropdowns in right  */
+        .dropdown a{
+            color: #000000 !important;
+        }
+        i.fa.fa-bars{
+            font-size: 1.5rem;
         }
     }

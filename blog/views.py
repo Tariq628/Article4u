@@ -74,6 +74,7 @@ def signUp(request):
             if fm.is_valid():
                 fm.save()
                 messages.success(request, f"Welcome: Your account has been created..", extra_tags='#check-circle-fill')
+                return redirect("/login")
             else:
                 messages.warning(request, "Something went wrong..", extra_tags='#exclamation-triangle-fill')
         else:

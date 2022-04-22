@@ -10,16 +10,9 @@ searchBtn.addEventListener("click", () => {
   inputBtn.setAttribute("placeholder", "Type to search..");
   searchBtn.classList.remove("fa-search");
   submit.innerHTML = "<button class='submit-btn' type='submit'>Search</button>";
-  // closeBtn.innerHTML = "<i class='fas fa-times'></i>";
 });
-// closeBtn.addEventListener("click", () => {
-//   searchContainer.classList.remove("active");
-//   searchBtn.classList.add("fa-search");
-//   inputBtn.classList.remove("active");
-//   inputBtn.setAttribute("placeholder", "");
-//   submit.innerHTML = "";
-//   closeBtn.innerHTML = "";
-// });
+
+
 document.body.addEventListener("click", function () {
   searchContainer.classList.remove("active");
   searchBtn.classList.add("fa-search");
@@ -55,6 +48,62 @@ inputBtn.addEventListener("click", function (ev) {
 //   node.addEventListener("click", Handler);
 // });
 
+
+// video add through summernote
 const iFrame = document.getElementsByTagName("iframe")[0];
-iFrame.height = "100%";
-iFrame.width = "100%";
+if (iFrame) {
+  iFrame.height = "100%";
+  iFrame.width = "100%";
+}
+
+
+
+// Making right-items in navbar responsive
+rightCenter = document.getElementById("right-center");
+searchSmallScreen = document.getElementById("search-small-screen");
+accountSmallScreen = document.getElementById("account-small-screen");
+postSmallScreen = document.getElementById("post-small-screen");
+searchLargeScreen = document.getElementById("search-large-screen");
+accountLargeScreen = document.getElementById("account-large-screen");
+postLargeScreen = document.getElementById("post-large-screen");
+
+
+// function will return true if mediaWidth less than 955px
+const checkScreenSize = ()=>{
+  return window.matchMedia("(max-width:955px)");
+}
+
+
+// first time by default
+if(checkScreenSize().matches){
+  rightCenter.style.display = 'none';
+  searchSmallScreen.innerHTML = searchLargeScreen.outerHTML;
+  accountSmallScreen.innerHTML = accountLargeScreen.outerHTML;
+  postSmallScreen.innerHTML = postLargeScreen.outerHTML;
+}
+
+else{
+  rightCenter.style.display = 'flex';
+  searchSmallScreen.innerHTML = "";
+  accountSmallScreen.innerHTML = "";
+  postSmallScreen.innerHTML = "";
+}
+
+
+// if window resize call responsive function
+$(window).resize(function(e) {
+      if(checkScreenSize().matches){
+        rightCenter.style.display = 'none';
+        searchSmallScreen.innerHTML = searchLargeScreen.outerHTML;
+        accountSmallScreen.innerHTML = accountLargeScreen.outerHTML;
+        postSmallScreen.innerHTML = postLargeScreen.outerHTML;
+
+      }
+      
+      else{
+        rightCenter.style.display = 'flex';
+        searchSmallScreen.innerHTML = "";
+        accountSmallScreen.innerHTML = "";
+        postSmallScreen.innerHTML = "";
+      }
+  });
