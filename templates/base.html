@@ -73,7 +73,7 @@
 
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
               {% if user.is_authenticated %}
-              <li><a class="dropdown-item text-dark" href="{% url 'logout' %}">Logout</a></li>
+              <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
               {% else %}
               <li><a class="dropdown-item" href="{% url 'signup' %}">Signup</a></li>
               <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
