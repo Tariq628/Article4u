@@ -11,7 +11,7 @@ from django.urls import resolve
 # Create your views here.
 def index(request):
     obj = list(addPost.objects.all().order_by("-date"))[0:10]
-    return render(request, "blog\home.html", {"obj":obj})
+    return render(request, "blog/home.html", {"obj":obj})
 
 
 def writePost(request):
