@@ -1,1 +1,3 @@
-myprojectenv/
+myenv/
+.env
+/setup.cfg

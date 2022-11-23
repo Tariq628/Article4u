@@ -10,13 +10,22 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import environ
 from pathlib import Path
 import os
 from django.contrib.messages import constants as messages
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+
+env = environ.Env()
+environ.Env.read_env()
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+DATABASE_NAME = env('DATABASE_NAME')
+DATABASE_USER = env('DATABASE_USER')
+DATABASE_PASSWORD = env('DATABASE_PASSWORD')
+DATABASE_HOST = env('DATABASE_HOST')
+DATABASE_PORT = env('DATABASE_PORT')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -77,26 +86,21 @@ WSGI_APPLICATION = 'Article4u.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': DATABASE_NAME,
+        'USER': DATABASE_USER,
+        'PASSWORD': DATABASE_PASSWORD,
+        'HOST': DATABASE_HOST,
+        'PORT': DATABASE_PASSWORD
     }
 }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'article4u',
-#         'USER': 'root',
-#         'PASSWORD': 'tariq274',
-#         'HOST':'127.0.0.1',
-#         'PORT': '3306'
-#     }
-# }
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 X_FRAME_OPTIONS = 'ALLOWALL'
-XS_SHARING_ALLOWED_METHODS = ['POST','GET','OPTIONS', 'PUT', 'DELETE']
+XS_SHARING_ALLOWED_METHODS = ['POST', 'GET', 'OPTIONS', 'PUT', 'DELETE']
 
 
 # Password validation
