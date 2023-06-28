@@ -29,8 +29,14 @@ def writePost(request):
                 messages.success(request, "Your post has been successfully added...",
                                  extra_tags='#check-circle-fill')
             except Exception:
-                messages.error(request, "Something went wrong.. Make sure all fields must be filled, title should be clear, content should contain atleast 100 words",
-                               extra_tags='#exclamation-triangle-fill')
+                messages.error(
+                    request,
+                    """
+                    Something went wrong.. Make sure all fields must be filled,
+                    title should be clear, content should contain atleast 100 words
+                    """,
+                    extra_tags='#exclamation-triangle-fill'
+                )
         return render(request, "blog/writepost.html")
     else:
         messages.warning(request, "Please login first: ", extra_tags='#exclamation-triangle-fill')
@@ -74,7 +80,7 @@ def signUp(request):
             fm = SignUpForm(request.POST)
             if fm.is_valid():
                 fm.save()
-                messages.success(request, f"Welcome: Your account has been created..",
+                messages.success(request, "Welcome: Your account has been created..",
                                  extra_tags='#check-circle-fill')
                 return redirect("/login")
             else:
@@ -99,7 +105,10 @@ def userLogin(request):
                 if user is not None:
                     login(request, user)
                     messages.success(
-                        request, f"Welcome {request.user.first_name}: You are successfully logged in. ", extra_tags='#check-circle-fill')
+                        request,
+                        f"Welcome {request.user.first_name}: You are successfully logged in. ",
+                        extra_tags='#check-circle-fill'
+                    )
                     return redirect("/")
             else:
                 messages.error(request, "You are entering wrong username or password",
