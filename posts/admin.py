@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import addPost
+from .models import Post
 from django_summernote.admin import SummernoteModelAdmin
 
 
-@admin.register(addPost)
+@admin.register(Post)
 class addPostAdmin(SummernoteModelAdmin):
-    list_display = ["postId", "title", "category"]
+    list_display = ["id", "title", "category"]
