@@ -10,7 +10,7 @@ from django.urls import resolve
 
 
 def index(request):
-    obj = list(Post.objects.all().order_by("-date"))[0:10]
+    obj = Post.objects.all().order_by("-date")[0:10]
     return render(request, "blog/home.html", {"obj": obj})
 
 
@@ -44,7 +44,7 @@ def write_post(request):
 class template(TemplateView):
     def get(self, request, *args, **kwargs):
         catName = resolve(request.path).url_name
-        obj = list(Post.objects.filter(category=catName).values())[0:2]
+        obj = Post.objects.filter(category=catName).values()[0:2]
         try:
             title = obj[0]['category']
         except Exception:
@@ -54,20 +54,18 @@ class template(TemplateView):
 
 class json_template(View):
     def get(self, request, *args, **kwargs):
-        lower = ""
-        upper = kwargs.get("num_posts")
-        lower = upper - 3
-        urlName = resolve(request.path).url_name
-        urlName = urlName.replace("json", "")
-        obj = list(Post.objects.filter(category=urlName).values())[lower:upper]
-        obj_size = list(Post.objects.filter(category=urlName).values())
-        max_length = len(obj_size)
-        check = True if upper > max_length else False
-        return JsonResponse({"data": obj, "check": check})
+        upper = int(kwargs.get("num_posts"))
+        lower = max(upper - 3, 0)  # Ensure lower doesn't go below 0
+        url_name = resolve(request.path).url_name
+        url_name = url_name.replace("json_", "")
+        posts = list(Post.objects.filter(category=url_name).values()[lower:upper])
+        max_length = Post.objects.filter(category=url_name).count()
+        check = upper > max_length
+        return JsonResponse({"posts": posts, "check": check})
 
 
 def template_view(request, *args, **kwargs):
-    post = Post.objects.filter(postId=kwargs.get("myid"))[0]
+    post = Post.objects.filter(id=kwargs.get("myid"))[0]
     return render(request, "blog/templateview.html", {"post": post})
 
 

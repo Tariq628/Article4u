@@ -16,8 +16,8 @@ const handleArticles =()=>{
         type:"GET",
         url: `${document.location.pathname}${visible}/`,
         success: function(response){ 
-            let data = response.data;
-            data.map((post)=>{
+            let posts = response.posts;
+            posts.map((post)=>{
             container.innerHTML += `
 <article class="post">
 <img src="/media/${post.image}" alt="">
