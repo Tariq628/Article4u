@@ -15,7 +15,7 @@
 <div class="post-form">
     <h2>Write your article here</h2>
     <button form="my-form" class="post-submit btn-primary" type="submit">Publish</button>
-    <form action="{% url 'writePost' %}" id="my-form" method="post" enctype="multipart/form-data">
+    <form action="{% url 'write_post' %}" id="my-form" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="category">
             <select name="category" id="category" required>

@@ -16,7 +16,7 @@ def index(request):
     return render(request, "blog/home.html", {"obj": obj})
 
 
-def writePost(request):
+def write_post(request):
     if request.user.is_authenticated:
         if request.method == "POST":
             try:
@@ -43,7 +43,7 @@ def writePost(request):
         return redirect("/login")
 
 
-class Template(TemplateView):
+class template(TemplateView):
     def get(self, request, *args, **kwargs):
         # print(args, kwargs) #Empty, bcz there is no slug
         catName = resolve(request.path).url_name
@@ -55,7 +55,7 @@ class Template(TemplateView):
         return render(request, "blog/categories.html", {"obj": obj, 'title': title})
 
 
-class JsonTemplate(View):
+class json_template(View):
     def get(self, request, *args, **kwargs):
         lower = ""
         upper = kwargs.get("num_posts")
@@ -69,12 +69,12 @@ class JsonTemplate(View):
         return JsonResponse({"data": obj, "check": check})
 
 
-def TemplateView(request, *args, **kwargs):
+def template_view(request, *args, **kwargs):
     post = Post.objects.filter(postId=kwargs.get("myid"))[0]
     return render(request, "blog/templateview.html", {"post": post})
 
 
-def signUp(request):
+def sign_up(request):
     if not request.user.is_authenticated:
         if request.method == "POST":
             fm = SignUpForm(request.POST)
@@ -94,7 +94,7 @@ def signUp(request):
         return redirect("/")
 
 
-def userLogin(request):
+def user_login(request):
     if not request.user.is_authenticated:
         if request.method == "POST":
             fm = CustomAuthenticationForm(request=request, data=request.POST)
@@ -120,7 +120,7 @@ def userLogin(request):
         return redirect("/")
 
 
-def Logout(request):
+def user_logout(request):
     logout(request)
     messages.success(request, "Your account has been logged out", extra_tags='#check-circle-fill')
     return redirect("/login")
