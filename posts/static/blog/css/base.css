@@ -1,0 +1,247 @@
+/* font-family: 'Roboto', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+}
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+  }
+/* search icon css */
+.fa-search:before {
+    color: #000000;
+    }
+  
+/* for navbar */
+
+#navbar{
+    margin-bottom: 12px;
+    z-index: 1;
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+}
+
+#navbar nav{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+@media only screen and (min-width:953px){
+#navbar{
+    height: 56px;
+}
+#navbar nav{
+    top: 12px;
+}
+.nav-center{
+    width: 100%; 
+}
+.nav-center ul li{
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
+    margin-right: 40px;
+}
+}
+.nav-center ul a{
+    text-decoration: none;
+    color: #000000;
+}
+.nav-center ul a:hover{
+    border-bottom: 2px solid rgb(150 150 150);
+    cursor: pointer;
+}
+/* .nav-center ul li a:hover{
+    color: #1e86f5;
+} */
+.line{
+    margin: 0 auto;
+    width: 50%;
+    position: relative;
+    right: 20px;
+    color: rgb(10 2 76);
+}
+
+#logo img{
+    width: 43px;
+    border-radius: 31px;
+}
+
+
+
+/* About Search Box  */
+.search-container .input{
+    width: 0;
+    border-radius: 20px;
+    transition: width 0.3s ease-in-out;
+    border: none;
+    outline: none;
+}
+.search-container .input.active{
+    width: 150px;
+    padding: 4px 0 4px 7px;
+    border: 1px solid #1e86f5;
+    border-radius: 8px;
+}
+.search-btn {
+    cursor: pointer;
+    position: relative;
+    right: 22px;
+    color: #1e86f5;
+    text-align: center;
+}
+.submit-btn{
+    padding: 3px;
+    border-radius: 4px;
+    background-color: #1e86f5;
+    border-color: #1e86f5;
+    color: #fff;
+}
+.submit-btn:hover{
+    background-color: #0d6cd1;
+    color: #fff;
+}
+.close-btn{
+    font-size: 15px;
+    cursor: pointer;
+}
+.close-btn:hover{
+    color: #1e86f5;;
+}
+
+
+/* About Login */
+.login a{
+    text-decoration: none;
+    color: #000000;
+
+}
+.login ul li{
+    list-style: none;
+}
+
+
+/* overwrite bootstrap css */
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    padding: 0;
+    font-family: 'Font Awesome 5 Pro';
+    line-height: initial;
+}
+.btn{
+    color: #000000;
+    background-color: #fff;
+    padding: 4px 12px 4px 12px;
+    border: none;
+    outline: none;
+}
+
+.border-btm{
+    border-bottom: 2px solid rgb(150 150 150);
+}
+
+
+
+/* for foooter */
+#footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(61, 61, 61);
+    color: white;
+    height: 45px;
+    margin-top: 18px;
+}
+#check{
+    display: none;
+}
+.checkbtn{
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    font-size: 20px;
+    display: none;
+}
+
+
+
+@media only screen and (max-width:955px){
+        #navbar nav .nav-center .center{
+            display: flex;
+            flex-direction: column;
+        }
+        #navbar nav{
+            flex-direction: column;
+        }
+        .nav-center ul li{
+            list-style: none;
+            margin-right: 0;
+        }
+        .right.center{
+            flex-direction: column;
+        }
+        #aside{
+            display: none;
+        }
+        .checkbtn{
+            display: block;
+            z-index: 1;
+        }
+        .btn{
+            width: 6em;
+        }
+        .mr--11 {
+            margin: 0;
+        }
+        .search-btn{
+            right: 0;
+        }
+        ul.center{
+            align-items: initial;
+            justify-content: center;
+            position: fixed;
+            width: 100%;
+            /* height: 70vh; */
+            padding-top: 3em;
+            background: #2c3e50;
+            top: -100%;
+            transition: all .5s;
+        }
+        nav ul li{
+            display: block;
+            margin: 8px 0;
+        }
+        #check:checked ~ ul{
+            left: 0;
+            top: 0;
+        }
+        #check:checked + .checkbtn{
+            color: white;
+        }
+        ul li {
+            border-bottom: 2px solid rgb(252, 252, 252);
+        }
+        .nav-center ul a {
+            color: #efe8e8;
+        }
+
+        /* navbar dropdowns in right  */
+        .dropdown a{
+            color: #000000 !important;
+        }
+        i.fa.fa-bars{
+            font-size: 1.5rem;
+        }
+    }
