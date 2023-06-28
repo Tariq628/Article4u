@@ -17,7 +17,7 @@
             </div>
             <h6>{{item.title|safe}}</h6>
             <p>{{item.content|truncatewords_html:20|safe}}</p>
-            <p><a href="{% url 'templateView' item.postId %}">Read more . </a><span>4 min read</span></p>
+            <p><a href="{% url 'template_view' item.id %}">Read more . </a><span>4 min read</span></p>
         </article>
         {% endfor %}
     </div>

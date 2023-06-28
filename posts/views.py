@@ -8,8 +8,6 @@ from .forms import CustomAuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.urls import resolve
 
-# Create your views here.
-
 
 def index(request):
     obj = list(Post.objects.all().order_by("-date"))[0:10]
@@ -26,7 +24,7 @@ def write_post(request):
                 image = request.FILES['image']
                 post = Post(title=title, category=category, content=content, image=image)
                 post.save()
-                messages.success(request, "Your post has been successfully added...",
+                messages.success(request, "Your post has been successfully added.",
                                  extra_tags='#check-circle-fill')
             except Exception:
                 messages.error(
@@ -45,7 +43,6 @@ def write_post(request):
 
 class template(TemplateView):
     def get(self, request, *args, **kwargs):
-        # print(args, kwargs) #Empty, bcz there is no slug
         catName = resolve(request.path).url_name
         obj = list(Post.objects.filter(category=catName).values())[0:2]
         try:
