@@ -10,8 +10,8 @@ from django.urls import resolve
 
 
 def index(request):
-    obj = Post.objects.all().order_by("-date")[0:10]
-    return render(request, "blog/home.html", {"obj": obj})
+    posts = Post.objects.all().order_by("-date")[0:10]
+    return render(request, "blog/home.html", {"posts": posts})
 
 
 def write_post(request):
@@ -42,14 +42,11 @@ def write_post(request):
 
 
 class template(TemplateView):
-    def get(self, request, *args, **kwargs):
-        catName = resolve(request.path).url_name
-        obj = Post.objects.filter(category=catName).values()[0:2]
-        try:
-            title = obj[0]['category']
-        except Exception:
-            title = None
-        return render(request, "blog/categories.html", {"obj": obj, 'title': title})
+    def get(self, request):
+        cat_name = resolve(request.path).url_name
+        posts = Post.objects.filter(category=cat_name).values()[0:2]
+        title = posts[0]['category'] if posts else None
+        return render(request, "blog/categories.html", {"posts": posts, 'title': title})
 
 
 class json_template(View):
@@ -65,7 +62,7 @@ class json_template(View):
 
 
 def template_view(request, *args, **kwargs):
-    post = Post.objects.filter(id=kwargs.get("myid"))[0]
+    post = Post.objects.filter(id=kwargs.get("post_id"))[0]
     return render(request, "blog/templateview.html", {"post": post})
 
 
