@@ -5,45 +5,52 @@
 /* font-family: 'Epilogue', sans-serif; */
 @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400&display=swap');
 
-.container{
+.container {
     max-width: 80vw;
     margin: 12px auto;
     padding: 0;
     position: relative;
 }
-.post{
+
+.post {
     width: 100%;
     border: 1px solid rgb(222 215 215);
     background-color: #f8f9fa;
 }
-.post img{
+
+.post img {
     height: 100%;
     width: 100% !important;
 }
-#upper-sec{
+
+#upper-sec {
     display: flex;
     flex-direction: column;
 }
-#upper-sec > img:first-child {
+
+#upper-sec>img:first-child {
     /* position: absolute;
     right: 0; */
     margin: 0 auto;
     width: 50% !important;
     height: 50%;
 }
-.left-content{
+
+.left-content {
     font-family: 'Oxygen', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
     /* height: 500px; */
     width: 50%;
-    
+
 }
-.font-size{
+
+.font-size {
     font-size: 2.7rem;
 }
-.content{
+
+.content {
     font-family: 'Oxygen', sans-serif;
     width: 100%;
     display: flex;
@@ -53,8 +60,8 @@
     padding: 30px;
 }
 
-@media only screen and (max-width:955px){
-    #upper-sec > img:first-child {
+@media only screen and (max-width:955px) {
+    #upper-sec>img:first-child {
         margin: 0 auto;
         width: 100% !important;
         height: 50%;

@@ -1,12 +1,14 @@
-#mytextarea{
+#mytextarea {
     height: 60vh;
 }
-.post-form h2{
+
+.post-form h2 {
     display: inline;
     margin-left: 12px;
     font-family: 'Epilogue', sans-serif;
 }
-.post-submit{
+
+.post-submit {
     position: absolute;
     right: 12px;
     height: 30px;
@@ -15,28 +17,33 @@
     font-size: 20px;
     background-color: #0d6efd;
 }
-#my-form{
+
+#my-form {
     margin-top: 20px;
 }
-.category{
+
+.category {
     display: flex;
     justify-content: center;
     height: 50px;
 }
-#category{
+
+#category {
     font-size: 1.3em;
     height: 1.5em;
     border: none;
     padding-right: 20px;
     outline: none;
 }
-.post-title{
+
+.post-title {
     display: flex;
     justify-content: center;
     padding-left: 38px;
     margin-bottom: 12px;
 }
-#input-title{
+
+#input-title {
     border: none;
     outline: none;
     padding-left: 20px;
@@ -44,18 +51,22 @@
 }
 
 
-ol, ul{
+ol,
+ul {
     margin-top: 0;
     margin-bottom: 0;
     padding-left: 0;
 }
-.dropdown .btn{
+
+.dropdown .btn {
     color: #000000;
     background-color: #fff;
-    padding: 4px 12px; /* padding: 4px 12px 4px 12px; */
+    padding: 4px 12px;
+    /* padding: 4px 12px 4px 12px; */
     border: none;
     outline: none;
 }
+
 #dropdownMenuLink::after {
     display: inline-block;
     margin-left: 0.255em;

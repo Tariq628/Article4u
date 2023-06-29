@@ -1,25 +1,30 @@
 /* font-family: 'Epilogue', sans-serif; */
 @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400&display=swap');
-.container{
+
+.container {
     font-family: 'Epilogue', sans-serif;
     width: 98vw;
     height: 90vh;
     display: flex;
 }
-.inputs{
+
+.inputs {
     width: 100%;
     padding: 1em 4px;
     height: 3em;
-} /*This was for all three inputs */
-#login-left{
+}
+
+/*This was for all three inputs */
+#login-left {
     width: 60%;
 }
-#login-left img{
+
+#login-left img {
     height: 100%;
     width: 100%;
 }
 
-#login-right{
+#login-right {
     width: 40%;
     height: 90%;
     display: flex;
@@ -28,29 +33,35 @@
     align-items: center;
     margin: 2em;
 }
-#login-right form{
+
+#login-right form {
     width: 100%;
 }
-.label{
+
+.label {
     font-size: 1.5em;
 }
-.submit{
+
+.submit {
     margin-top: 14px;
-    background-color:#ffb9b9;
+    background-color: #ffb9b9;
 }
-.submit:hover{
+
+.submit:hover {
     color: aliceblue;
-    background-color:#100e0e;
+    background-color: #100e0e;
 }
-.errors{
+
+.errors {
     color: red;
 }
 
-@media only screen and (max-width:778px){
-    #login-left{
+@media only screen and (max-width:778px) {
+    #login-left {
         display: none;
     }
-    #login-right{
+
+    #login-right {
         width: 100%;
     }
 }

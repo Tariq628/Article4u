@@ -1,22 +1,25 @@
+.nav-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-.nav-center{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.center{
+.center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.right{
+
+.right {
     display: flex;
     position: absolute;
     right: 0;
 }
-.mr--11{
+
+.mr--11 {
     margin-right: 11px;
 }
-.mr--8.active{
+
+.mr--8.active {
     margin-right: 8px;
 }

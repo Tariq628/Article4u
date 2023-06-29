@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400&display=swap');
-.errors{
+
+.errors {
     color: red;
 }
-.container{
+
+.container {
     font-family: 'Epilogue', sans-serif;
     width: 80vw;
 }
-.container form{
+
+.container form {
     width: 100%;
     height: 650px;
     display: flex;
@@ -14,19 +17,23 @@
     align-items: center;
     justify-content: center;
 }
-.label{
+
+.label {
     font-size: 1.3em;
 }
-.inputs{
+
+.inputs {
     width: 60%;
     height: 2.5em;
     margin-bottom: 1em;
 }
-.submit{
+
+.submit {
     margin-top: 14px;
-    background-color:#ffb9b9;
+    background-color: #ffb9b9;
 }
-.submit:hover{
+
+.submit:hover {
     color: aliceblue;
-    background-color:#100e0e;
+    background-color: #100e0e;
 }
