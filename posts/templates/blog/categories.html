@@ -8,16 +8,16 @@
 {% block body %}
 <section id='sec'>
     <div class="container">
-        {% for item in obj %}
+        {% for post in posts %}
         <article class="post">
-            <img src="/media/{{item.image}}" alt="">
+            <img src="/media/{{post.image}}" alt="">
             <div>
                 <span><b style='font-size:14px;'>Tariq Ahmed </b><span style='font-size:12px;'>in </span><b
-                        style='font-size:14px;'>{{item.category}}</b></span>
+                        style='font-size:14px;'>{{post.category}}</b></span>
             </div>
-            <h6>{{item.title|safe}}</h6>
-            <p>{{item.content|truncatewords_html:20|safe}}</p>
-            <p><a href="{% url 'template_view' item.id %}">Read more . </a><span>4 min read</span></p>
+            <h6>{{post.title|safe}}</h6>
+            <p>{{post.content|truncatewords_html:20|safe}}</p>
+            <p><a href="{% url 'template_view' post.id %}">Read more . </a><span>4 min read</span></p>
         </article>
         {% endfor %}
     </div>
