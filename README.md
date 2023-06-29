@@ -1,5 +1,6 @@
 # ***Article4u***
-***Article4u*** is my big project which i have made by my own, after a months of coding ***Article4u*** blog has been reached on completion. Most of the Django concepts that i have learnt in life, All the concepts have been used in this beautiful blog..
+Most of the Django concepts that i learned, All the concepts have been used in this blog.
+
 # More About ***Article4u***
 ***Article4u*** is a mixture of all famous blogs like: [medium](https://medium.com/), [HubSpot](https://blog.hubspot.com/), [Unspalsh](https://unsplash.com/blog/) I tried to cover all the features of popular blogs in ***Article4u***, Blog contains beautiful code editor ***Summernote***, it maintains user's ***HTML*** perfectly
 ## Contribute
@@ -20,21 +21,6 @@ Open editor where manage.py exist, make virtual env by terminal.
 ### Install packages
 ```pip install -r requirements.txt```
 
-## Move SQLITE3 to MYSQL
-Download MYSQL [here](https://dev.mysql.com/downloads/installer/) create database with any name
-### Replace SQLITE3 setting with MYSQL in settings.py
-```
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'database_name',
-        'USER': 'root',
-        'PASSWORD': 'database_password',
-        'HOST':'localhost',
-        'PORT': '3306'
-    }
-}
-```
 ### Don't forget to apply migrations
 ```python manage.py makemigrations```
 
