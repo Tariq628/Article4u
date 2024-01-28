@@ -76,7 +76,7 @@ DATABASES = {
         'USER': DATABASE_USER,
         'PASSWORD': DATABASE_PASSWORD,
         'HOST': DATABASE_HOST,
-        'PORT': DATABASE_PASSWORD
+        'PORT': DATABASE_PORT
     }
 }
 
