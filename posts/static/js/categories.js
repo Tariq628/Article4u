@@ -1,9 +1,9 @@
 // let tagName = document.getElementsByTagName("section")[0];
-function fixHtml(html){
+function fixHtml(html) {
     var div = document.createElement('div');
-    div.innerHTML=html
+    div.innerHTML = html
     return (div.innerHTML);
-  }
+}
 let tagName = document.getElementById("sec1");
 let btn1 = document.querySelector(".btn1");
 let visible = 5;
@@ -11,26 +11,26 @@ let node = document.createElement("div");
 node.setAttribute("class", "container-inside");
 tagName.appendChild(node);
 var container = Array.from(document.querySelectorAll(".container-inside")).pop();
-const handleArticles =()=>{
+const handleArticles = () => {
     $.ajax({
-        type:"GET",
+        type: "GET",
         url: `${document.location.pathname}${visible}/`,
-        success: function(response){ 
+        success: function (response) {
             let posts = response.posts;
-            posts.map((post)=>{
-            container.innerHTML += `
-<article class="post">
-<img src="/media/${post.image}" alt="">
-<div>
-<span><b style='font-size:14px;'>Tariq Ahmed </b><span style='font-size:12px;'>in </span><b style='font-size:14px;'>${post.category}</b></span>
-</div>
-<h6>${post.title}</h6>
-<p>${fixHtml(post.content.slice(0,600))}</p>
-<p><a href="/templateview/${post.postId}">Read more . </a><span>4 min read</span></p> 
-</article>
-`
+            posts.map((post) => {
+                container.innerHTML += `
+                    <article class="post">
+                    <img src="/media/${post.image}" alt="">
+                    <div>
+                    <span><b style='font-size:14px;'>Tariq Ahmed </b><span style='font-size:12px;'>in </span><b style='font-size:14px;'>${post.category}</b></span>
+                    </div>
+                    <h6>${post.title}</h6>
+                    <p>${fixHtml(post.content.slice(0, 600))}</p>
+                    <p><a href="/template-view/${post.id}">Read more . </a><span>4 min read</span></p> 
+                    </article>
+                    `
             });
-            if(response.check){
+            if (response.check) {
                 btn1.innerHTML = "No more posts";
             }
         }
@@ -39,7 +39,7 @@ const handleArticles =()=>{
 
 
 handleArticles();
-bt.addEventListener("click", ()=>{
+bt.addEventListener("click", () => {
     visible += 3;
     handleArticles();
     let c_inside = document.querySelectorAll(".container-inside");
