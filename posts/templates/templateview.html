@@ -8,7 +8,7 @@
 {% block title %} {{post.title}} {% endblock title %}
 {% block csslink %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'blog/css/templateview.css' %}">
+<link rel="stylesheet" href="{% static 'css/templateview.css' %}">
 {% endblock csslink %}
 {% block body %}
 <div class="container">
@@ -31,5 +31,5 @@
 {% endblock body %}
 
 {% block jslink %}
-<script src="{% static 'blog/js/home.js' %}"></script>
+<script src="{% static 'js/home.js' %}"></script>
 {% endblock jslink %}
