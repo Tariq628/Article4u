@@ -11,7 +11,7 @@ from django.urls import resolve
 
 def index(request):
     posts = Post.objects.all().order_by("-date")[0:10]
-    return render(request, "blog/home.html", {"posts": posts})
+    return render(request, "home.html", {"posts": posts})
 
 
 def write_post(request):
@@ -35,7 +35,7 @@ def write_post(request):
                     """,
                     extra_tags='#exclamation-triangle-fill'
                 )
-        return render(request, "blog/writepost.html")
+        return render(request, "writepost.html")
     else:
         messages.warning(request, "Please login first: ", extra_tags='#exclamation-triangle-fill')
         return redirect("/login")
@@ -46,7 +46,7 @@ class template(TemplateView):
         cat_name = resolve(request.path).url_name
         posts = Post.objects.filter(category=cat_name).values()[0:2]
         title = posts[0]['category'] if posts else None
-        return render(request, "blog/categories.html", {"posts": posts, 'title': title})
+        return render(request, "categories.html", {"posts": posts, 'title': title})
 
 
 class json_template(View):
@@ -63,7 +63,7 @@ class json_template(View):
 
 def template_view(request, *args, **kwargs):
     post = Post.objects.filter(id=kwargs.get("post_id"))[0]
-    return render(request, "blog/templateview.html", {"post": post})
+    return render(request, "templateview.html", {"post": post})
 
 
 def sign_up(request):
@@ -81,7 +81,7 @@ def sign_up(request):
         else:
             fm = SignUpForm(auto_id="my_%s")
 
-        return render(request, "blog/signup.html", {"form": fm})
+        return render(request, "signup.html", {"form": fm})
     else:
         return redirect("/")
 
@@ -107,7 +107,7 @@ def user_login(request):
                                extra_tags='#exclamation-triangle-fill')
         else:
             fm = CustomAuthenticationForm()
-        return render(request, "blog/login.html", {"form": fm})
+        return render(request, "login.html", {"form": fm})
     else:
         return redirect("/")
 
