@@ -10,7 +10,7 @@ from django.urls import resolve
 
 
 def index(request):
-    posts = Post.objects.all().order_by("-date")[0:10]
+    posts = Post.objects.all().order_by("-created_at")[0:10]
     return render(request, "home.html", {"posts": posts})
 
 
