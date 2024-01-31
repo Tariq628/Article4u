@@ -18,7 +18,7 @@
             <div class="m-3 left-content">
                 <div class=""><strong>{{post.category}} </strong><span>| 9 MIN READ</span></div>
                 <h1 class="font-size my-4">{{post.title}}</h1>
-                <p><b>Written by</b> Tariq Ahmed</p>
+                <p><b>Written by</b> {{post.created_by.username}}</p>
             </div>
         </div>
         <div class="content">
@@ -28,6 +28,7 @@
         </div>
     </article>
 </div>
+
 {% endblock body %}
 
 {% block jslink %}

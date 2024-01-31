@@ -7,8 +7,10 @@ from django.contrib import messages
 from .forms import CustomAuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.urls import resolve
+from django.contrib.auth.decorators import login_required
 
 
+@login_required(login_url='login')
 def index(request):
     posts = Post.objects.all().order_by("-created_at")[0:10]
     return render(request, "home.html", {"posts": posts})
@@ -22,7 +24,7 @@ def write_post(request):
                 category = request.POST.get("category")
                 content = request.POST.get("content")
                 image = request.FILES['image']
-                post = Post(title=title, category=category, content=content, image=image)
+                post = Post(title=title, category=category, content=content, image=image, created_by=request.user)
                 post.save()
                 messages.success(request, "Your post has been successfully added.",
                                  extra_tags='#check-circle-fill')
