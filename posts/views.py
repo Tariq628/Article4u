@@ -1,6 +1,7 @@
+from django.utils.decorators import method_decorator
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http.response import JsonResponse
-from django.shortcuts import render, redirect
-from .models import Post
+from .models import Comment, Post
 from django.views.generic import View, TemplateView
 from .forms import SignUpForm
 from django.contrib import messages
@@ -43,6 +44,7 @@ def write_post(request):
         return redirect("/login")
 
 
+@method_decorator(login_required, name='dispatch')
 class template(TemplateView):
     def get(self, request):
         cat_name = resolve(request.path).url_name
@@ -51,6 +53,7 @@ class template(TemplateView):
         return render(request, "categories.html", {"posts": posts, 'title': title})
 
 
+@method_decorator(login_required, name='dispatch')
 class json_template(View):
     def get(self, request, *args, **kwargs):
         upper = int(kwargs.get("num_posts"))
@@ -63,9 +66,19 @@ class json_template(View):
         return JsonResponse({"posts": posts, "check": check})
 
 
+@login_required(login_url='login')
 def template_view(request, *args, **kwargs):
     post = Post.objects.filter(id=kwargs.get("post_id"))[0]
     return render(request, "templateview.html", {"post": post})
+
+
+@login_required(login_url='login')
+def post_comment(request, post_id):
+    if request.method == 'POST':
+        post = get_object_or_404(Post, id=post_id)
+        content = request.POST.get('content')
+        Comment.objects.create(post=post, author=request.user, content=content)
+    return redirect("/template-view/6")
 
 
 def sign_up(request):

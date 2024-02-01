@@ -29,6 +29,65 @@
     </article>
 </div>
 
+<section style="background-color: #eee;">
+  <div class="container my-5 py-5">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-12 col-lg-10 col-xl-8">
+        <div class="card">
+          {% for comment in post.comments.all %}
+            <div class="card-body">
+              <div class="d-flex flex-start align-items-center">
+                <img class="rounded-circle shadow-1-strong me-3"
+                  src="https://t4.ftcdn.net/jpg/02/44/43/69/360_F_244436923_vkMe10KKKiw5bjhZeRDT05moxWcPpdmb.jpg" alt="avatar" width="60"
+                  height="60" />
+                <div>
+                  <h6 class="fw-bold text-primary mb-1">{{ comment.author.username }}</h6>
+                  <p class="text-muted small mb-0">
+                    Shared publicly - {{ comment.date }}
+                  </p>
+                </div>
+              </div>
+
+              <p class="mt-3 mb-4 pb-2">
+                {{ comment.content }}
+              </p>
+
+              {% comment %} <div class="small d-flex justify-content-start">
+                <a href="#!" class="d-flex align-items-center me-3">
+                  <i class="far fa-thumbs-up me-2"></i>
+                  <p class="mb-0">Like</p>
+                </a>
+              </div> {% endcomment %}
+            </div>
+          {% endfor %}
+          
+          <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
+            <!-- Comment Form -->
+            <form method="post" action="{% url 'post_comment' post.id %}">
+              {% csrf_token %}
+              <div class="d-flex flex-start w-100">
+                <img class="rounded-circle shadow-1-strong me-3"
+                  src="https://t4.ftcdn.net/jpg/02/44/43/69/360_F_244436923_vkMe10KKKiw5bjhZeRDT05moxWcPpdmb.jpg" alt="avatar" width="40"
+                  height="40" />
+                <div class="form-outline w-100">
+                  <textarea class="form-control" name="content" id="textAreaExample" rows="4"
+                    style="background: #fff;"></textarea>
+                  <label class="form-label" for="textAreaExample">Message</label>
+                </div>
+              </div>
+              <div class="float-end mt-2 pt-1">
+                <button type="submit" class="btn btn-primary btn-sm">Post comment</button>
+                <button type="button" class="btn btn-outline-primary btn-sm">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 {% endblock body %}
 
 {% block jslink %}
