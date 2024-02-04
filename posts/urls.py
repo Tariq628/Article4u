@@ -8,7 +8,7 @@ urlpatterns = [
     path("write-post/", views.write_post, name="write_post"),
     path("random-facts/", template.as_view(), name="random_facts"),
     path(
-        "randomfacts/<int:num_posts>/", json_template.as_view(), name="json_random_facts"
+        "random-facts/<int:num_posts>/", json_template.as_view(), name="json_random_facts"
     ),
     path("technology/", template.as_view(), name="technology"),
     path("technology/<int:num_posts>/", json_template.as_view(), name="json_technology"),

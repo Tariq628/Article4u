@@ -2,9 +2,12 @@
 {% load static %}
 {% block csslink %}
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
 {% endblock csslink %}
 {% block title %} Home Page | Article4 {% endblock title %}
+{% block css %}
 
+{% endblock css %}
 
 {% block body %}
 <div id="home-container">
@@ -24,37 +27,38 @@
                         <h6>{{post.title|safe}}</h6>
                         <p><a href="{% url 'template_view' post.id %}">Read more . </a><span>4 min read</span></p>
                         <div>
-                            <span><b style='font-size:14px;'>Tariq Ahmed </b><span style='font-size:12px;'>in </span><b
+                            <span><b style='font-size:14px;'> {{post.created_by.username}} </b><span style='font-size:12px;'>in </span><b
                                     style='font-size:14px;'>{{post.category}}</b></span>
                         </div>
                     </div>
                 </article>
                 {% endfor %}
             </div>
-            <div class="right-posts">
-                {% for post in posts|slice:'1:4' %}
-                <article class="right-post">
-                    <img src="/media/{{post.image}}" alt="">
-                    <div class="right-content">
-                        <h6>{{post.title|safe}}</h6>
-                        <p><a href="{% url 'template_view' post.id %}">Read more . </a><span>4 min read</span></p>
-                        <div>
-                            <span><b style='font-size:14px;'>Tariq Ahmed </b><span style='font-size:12px;'>in </span><b
-                                    style='font-size:14px;'>{{post.category}}</b></span>
-                        </div>
+
+<div class="container">
+    <div class="row">
+        {% for post in posts|slice:'1:7' %}
+        <div class="col-md-4 mb-4">
+            <article class="right-post">
+                <img src="/media/{{post.image}}" alt="" class="img-fluid">
+                <div class="right-content mt-2">
+                    <h6>{{post.title|safe}}</h6>
+                    <p><a href="{% url 'template_view' post.id %}">Read more . </a><span>4 min read</span></p>
+                    <div>
+                        <span><b style='font-size:14px;'> {{post.created_by.username}} </b><span style='font-size:12px;'>in </span><b
+                            style='font-size:14px;'>{{post.category}}</b></span>
                     </div>
-                </article>
-                {% endfor %}
-            </div>
+                </div>
+            </article>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
     </section>
 
-    <aside id="aside">
-        <h3>About World</h3>
-        <p>The mango is perfect in that it is always yellow and if it’s not, I don’t want to hear about it. The mango’s
-            only flaw, and it’s a minor one, is the effort it sometimes takes to undress the mango, carve it up in a way
-            that makes sense, and find its way to the mouth.</p>
-        <h4>Top Articles</h4>
-    </aside>
 </div>
 
 

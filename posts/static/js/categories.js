@@ -22,7 +22,7 @@ const handleArticles = () => {
                     <article class="post">
                     <img src="/media/${post.image}" alt="">
                     <div>
-                    <span><b style='font-size:14px;'>Tariq Ahmed </b><span style='font-size:12px;'>in </span><b style='font-size:14px;'>${post.category}</b></span>
+                    <span><b style='font-size:14px;'>${post.created_by__username} </b><span style='font-size:12px;'>in </span><b style='font-size:14px;'>${post.category}</b></span>
                     </div>
                     <h6>${post.title}</h6>
                     <p>${fixHtml(post.content.slice(0, 600))}</p>
@@ -30,7 +30,7 @@ const handleArticles = () => {
                     </article>
                     `
             });
-            if (response.check) {
+                        if (response.check) {
                 btn1.innerHTML = "No more posts";
             }
         }

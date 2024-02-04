@@ -12,7 +12,7 @@
         <article class="post">
             <img src="/media/{{post.image}}" alt="">
             <div>
-                <span><b style='font-size:14px;'>Tariq Ahmed </b><span style='font-size:12px;'>in </span><b
+                <span><b style='font-size:14px;'> {{post.created_by.username}} </b><span style='font-size:12px;'>in </span><b
                         style='font-size:14px;'>{{post.category}}</b></span>
             </div>
             <h6>{{post.title|safe}}</h6>
@@ -27,10 +27,6 @@
 <div class="container-box1">
     <section id='sec1'>
     </section>
-
-    <aside id="aside">
-        <h3>Most Read</h3>
-    </aside>
 </div>
 
 

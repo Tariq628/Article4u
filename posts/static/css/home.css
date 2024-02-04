@@ -86,24 +86,7 @@ span {
 
 
 
-/* for right */
-.right-posts .right-post {
-    display: flex;
-    align-items: center;
-    height: 150px;
-    margin-bottom: 20px;
-}
 
-.right-posts img {
-    width: 39%;
-    /* height: 83%; */
-    height: auto;
-}
-
-.right-content {
-    width: 50%;
-    margin: 10px;
-}
 
 /* Overrider default css */
 p {

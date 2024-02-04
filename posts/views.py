@@ -48,9 +48,8 @@ def write_post(request):
 class template(TemplateView):
     def get(self, request):
         cat_name = resolve(request.path).url_name
-        posts = Post.objects.filter(category=cat_name).values()[0:2]
-        title = posts[0]['category'] if posts else None
-        return render(request, "categories.html", {"posts": posts, 'title': title})
+        posts = Post.objects.filter(category=cat_name)[0:2]
+        return render(request, "categories.html", {"posts": posts, 'title': cat_name.capitalize()})
 
 
 @method_decorator(login_required, name='dispatch')
@@ -60,9 +59,15 @@ class json_template(View):
         lower = max(upper - 3, 0)  # Ensure lower doesn't go below 0
         url_name = resolve(request.path).url_name
         url_name = url_name.replace("json_", "")
-        posts = list(Post.objects.filter(category=url_name).values()[lower:upper])
+        posts = list(
+            Post.objects.filter(category=url_name).values(
+                'id', 'title', 'category', 'image', 'content', 'created_at',
+                'created_by__username'  # Include the username field
+            )[lower:upper]
+        )
         max_length = Post.objects.filter(category=url_name).count()
         check = upper > max_length
+        print(check)
         return JsonResponse({"posts": posts, "check": check})
 
 
